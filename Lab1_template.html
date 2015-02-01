@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>shader library - lab1</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+	<script src="Common/webgl-utils.js"></script>
+	<script src="Common/initShaders.js"></script>
+	<script src="osugl.js"></script>
+	
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+
+void
+main()
+{
+    gl_Position = vPosition;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+
+void
+main()
+{
+    gl_FragColor = vec4( 0.6, 0.6, 0.3, 1.0 );
+}
+</script>
+	
+<script>
+function Maze() {
+
+glRender();
+}
+
+function FractalTree() {
+
+glRender();
+}
+
+function HilbertCurve() {
+
+glRender();
+}
+
+function Mandelbrot() {
+
+glRender();
+}
+
+</script>
+
+<style>
+table#table1 {
+	border-spacing: 20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+</style>
+<style>
+div#heading {
+	font-size: 150%;
+	text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+<div id="heading">
+<h1>Group 2 - Lab 1</h1>
+</div>
+	<div id="container">
+	<table id="table1">
+		<tr>
+		<td>
+			<input id="Maze" type="button" onclick="Maze()" value="Maze" /></td>
+			<td><input id="FractalTree" type="button" value="Fractal Tree" /></td>
+			<td><input id="HilbertCurve" type="button" value="Hilbert Curve" /></td>
+			<td><input id="Mandelbrot" type="button" value="Mandelbrot" /></td>
+			<td><input id="Clear" type="button" value='Clear' /></td>
+						<td><input id="Quit" type="button" value='Quit' /></td>
+			<br>
+		</tr>
+		</table>
+		<canvas id="canvas"></canvas>
+	</div>
+</body>
+
+</html>
